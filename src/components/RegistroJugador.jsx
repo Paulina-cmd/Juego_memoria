@@ -1,4 +1,3 @@
-// src/components/RegistroJugador.jsx
 import React, { useState } from 'react'
 
 const RegistroJugador = ({ onRegistrar }) => {
