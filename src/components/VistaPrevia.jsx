@@ -1,4 +1,3 @@
-// src/components/VistaPrevia.jsx
 import React, { useState, useEffect } from 'react'
 
 const VistaPrevia = ({ cartas, onCompletada }) => {
