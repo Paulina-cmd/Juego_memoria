@@ -1,4 +1,3 @@
-// src/hooks/useTemporizador.js
 import { useState, useEffect, useRef } from 'react'
 
 export const useTemporizador = (inicia = false) => {
