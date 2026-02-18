@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react'
 import Card from './components/Card'
 import Temporizador from './components/Temporizador'
@@ -31,7 +30,7 @@ function App() {
     setPuntuaciones(obtenerPuntuaciones())
   }, [])
 
-  // ===== ESTILOS RESPONSIVE CON CSS =====
+
   useEffect(() => {
     const style = document.createElement('style')
     style.textContent = `
@@ -94,12 +93,12 @@ function App() {
     const pokemons = await obtenerPokemons(6)
     setCartasOriginales(pokemons)
     
-    // Crear baraja SIN mezclar para la vista previa
+  
     const baraja = [...pokemons, ...pokemons]
       .map((item, index) => ({
         ...item,
         cartaId: index,
-        volteada: true, // Todas visibles para la vista previa
+        volteada: true, 
         emparejada: false
       }))
     
@@ -114,11 +113,9 @@ function App() {
 
   const terminarVistaPrevia = () => {
     setMostrarVistaPrevia(false)
-    
-    // AHORA SÍ: Mezclar las cartas después de la vista previa
     const cartasMezcladas = [...cartas]
       .sort(() => Math.random() - 0.5)
-      .map(c => ({ ...c, volteada: false })) // Y las volteamos
+      .map(c => ({ ...c, volteada: false })) 
     
     setCartas(cartasMezcladas)
     setJuegoIniciado(true)
@@ -136,7 +133,7 @@ function App() {
 
     if (cartasSeleccionadas.length === 2) return
 
-    // Voltear carta
+    
     setCartas(cartas.map(c => 
       c.cartaId === cartaId ? { ...c, volteada: true } : c
     ))
@@ -144,13 +141,11 @@ function App() {
     setCartasSeleccionadas([...cartasSeleccionadas, cartaId])
     setMovimientos(movimientos + 1)
 
-    // Verificar par
     if (cartasSeleccionadas.length === 1) {
       const primeraCarta = cartas.find(c => c.cartaId === cartasSeleccionadas[0])
       const segundaCarta = carta
 
       if (primeraCarta.id === segundaCarta.id) {
-        // Son iguales
         setTimeout(() => {
           setCartas(cartas.map(c => 
             c.id === primeraCarta.id ? { ...c, emparejada: true } : c
@@ -159,7 +154,6 @@ function App() {
           setCartasSeleccionadas([])
         }, 500)
       } else {
-        // No son iguales
         setBloquear(true)
         setTimeout(() => {
           setCartas(cartas.map(c => 
@@ -174,7 +168,6 @@ function App() {
     }
   }
 
-  // Verificar victoria
   useEffect(() => {
     if (paresEncontrados.length === 6 && juegoIniciado) {
       pausar()
@@ -186,15 +179,11 @@ function App() {
     }
   }, [paresEncontrados, juegoIniciado, jugador, movimientos, tiempo, pausar])
 
-  // ===== REINICIAR PARTIDA (MANTIENE EL MISMO JUGADOR) =====
   const reiniciarPartida = () => {
-    // Guardamos el nombre del jugador actual
     const nombreActual = jugador
-    
-    // Reseteamos todo
     setMostrarVictoria(false)
     setJuegoIniciado(false)
-    reiniciar() // Reinicia el temporizador
+    reiniciar() 
     setCartas([])
     setCartasSeleccionadas([])
     setParesEncontrados([])
@@ -202,7 +191,7 @@ function App() {
     setBloquear(false)
     setMostrarVistaPrevia(false)
     
-    // Iniciamos nueva partida con el MISMO jugador
+    
     setCargando(true)
     setTimeout(() => {
       inicializarJuego(nombreActual)
@@ -217,7 +206,6 @@ function App() {
     setCartas([])
   }
 
-  // Componente de mensaje de victoria
   const MensajeVictoria = () => (
     <div style={{
       position: 'fixed',
@@ -278,7 +266,7 @@ function App() {
           Ver Leaderboard 🏆
         </button>
         
-        {/* Botón REINTENTAR (mantiene nombre) */}
+        {}
         <button
           onClick={() => {
             setMostrarVictoria(false)
@@ -301,7 +289,7 @@ function App() {
           Reintentar 🔄
         </button>
         
-        {/* Botón CAMBIAR JUGADOR */}
+        {}
         <button
           onClick={() => {
             setMostrarVictoria(false)
@@ -427,7 +415,7 @@ function App() {
 
   return (
     <div style={styles.app}>
-      {/* Vista previa */}
+      {}
       {mostrarVistaPrevia && (
         <VistaPrevia 
           cartas={cartasOriginales} 
@@ -435,7 +423,7 @@ function App() {
         />
       )}
       
-      {/* Leaderboard */}
+      {}
       {mostrarLeaderboard && (
         <Leaderboard 
           puntuaciones={puntuaciones}
@@ -443,10 +431,10 @@ function App() {
         />
       )}
 
-      {/* Mensaje de victoria */}
+      {}
       {mostrarVictoria && <MensajeVictoria />}
 
-      {/* Header */}
+      {}
       <header style={styles.header}>
         <h1 style={styles.titulo}>🎮 Pokémon Memory Game</h1>
         
@@ -459,7 +447,7 @@ function App() {
           <Temporizador tiempo={tiempoFormato} movimientos={movimientos} />
           
           <div style={styles.botones}>
-            {/* Botón Récords */}
+            {}
             <button 
               onClick={() => setMostrarLeaderboard(true)}
               style={{
@@ -479,7 +467,7 @@ function App() {
               🏆 Récords
             </button>
             
-            {/* NUEVO: Botón Reintentar (mantiene nombre) */}
+            {}
             <button 
               onClick={reiniciarPartida}
               style={{
@@ -499,7 +487,7 @@ function App() {
               🔄 Reintentar
             </button>
             
-            {/* Botón Cambiar Jugador */}
+            {}
             <button 
               onClick={nuevoJuego}
               style={{
@@ -521,7 +509,7 @@ function App() {
           </div>
         </div>
 
-        {/* Barra de progreso */}
+        {}
         <div style={styles.progreso}>
           <div 
             style={{
@@ -535,7 +523,7 @@ function App() {
         </div>
       </header>
 
-      {/* Tablero de juego - CON CLASE tablero-grid */}
+      {}
       <div className="tablero-grid">
         {cartas.map(carta => (
           <Card
@@ -548,7 +536,7 @@ function App() {
         ))}
       </div>
 
-      {/* Mensaje de juego en progreso */}
+      {}
       {juegoIniciado && (
         <div style={styles.juegoActivo}>
           <p>✨ ¡Encuentra todos los pares! ✨</p>
