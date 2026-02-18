@@ -1,7 +1,6 @@
-// src/services/pokeApi.js
 export const obtenerPokemons = async (limite = 6) => {
   try {
-    // IDs aleatorios entre 1 y 151 (primera generación)
+    
     const ids = []
     for (let i = 0; i < limite; i++) {
       ids.push(Math.floor(Math.random() * 150) + 1)
@@ -23,7 +22,6 @@ export const obtenerPokemons = async (limite = 6) => {
     return pokemons
   } catch (error) {
     console.error('Error cargando pokemons:', error)
-    // Datos de respaldo
     return [
       { id: 25, nombre: 'pikachu', imagen: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png', tipo: 'electric' },
       { id: 1, nombre: 'bulbasaur', imagen: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png', tipo: 'grass' },
