@@ -1,12 +1,11 @@
-// src/components/Card.jsx
 import React from 'react'
 
 const Card = ({ pokemon, seleccionada, emparejada, onClick }) => {
   const styles = {
     
   card: {
-    width: '130px', // Reducido de 160px
-    height: '160px', // Reducido de 200px
+    width: '130px', 
+    height: '160px', 
     cursor: 'pointer',
     perspective: '1000px',
     margin: '5px',
@@ -62,8 +61,8 @@ const Card = ({ pokemon, seleccionada, emparejada, onClick }) => {
       border: '3px solid #333'
     },
   imagen: {
-    width: '70px', // Reducido de 100px
-    height: '70px', // Reducido de 100px
+    width: '70px', 
+    height: '70px', 
     objectFit: 'contain'
   },
     nombre: {
