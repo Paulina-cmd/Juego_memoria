@@ -1,4 +1,3 @@
-// src/components/Temporizador.jsx
 import React from 'react'
 
 const Temporizador = ({ tiempo, movimientos }) => {
