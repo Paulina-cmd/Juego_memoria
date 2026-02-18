@@ -1,4 +1,3 @@
-// src/components/Cargando.jsx
 import React, { useEffect } from 'react'
 
 const Cargando = () => {
