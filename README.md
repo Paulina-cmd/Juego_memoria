@@ -1,37 +1,56 @@
-# 🎵 Música - Página Web Educativa
+# 🎮 Pokémon Memory Game
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-Una página web educativa dedicada a explorar el mundo de la música, con secciones de artistas, géneros musicales e instrumentos.
+Un juego de memoria interactivo con temática de Pokémon, construido con React y Vite. ¡Pon a prueba tu memoria mientras buscas pares de tus Pokémon favoritos!
 
 ## ✨ Características
 
-- 🎨 **Diseño moderno** con gradientes y efectos visuales
-- 📱 **Totalmente responsive** (se ve bien en móvil, tablet y desktop)
-- 🎤 **Sección de Artistas** con 12 músicos destacados
-- 🎧 **Sección de Géneros** con tarjetas interactivas
-- 🎸 **Sección de Instrumentos** con filtros por categoría
-- 🧭 **Navegación intuitiva** entre todas las páginas
+- ⚡ **Construido con Vite + React** para un rendimiento óptimo
+- 🎴 **12 cartas** (6 pares) con imágenes oficiales de Pokémon
+- ⏱️ **Temporizador** para medir tu tiempo
+- 🔄 **Contador de movimientos**
+- 🏆 **Leaderboard** con mejores puntuaciones (se guarda en tu navegador)
+- 👤 **Registro de jugador** con nombre personalizado
+- 👀 **Vista previa de 3 segundos** para memorizar las cartas
+- 📱 **Diseño responsive** para jugar en cualquier dispositivo
 
-## 🎯 Secciones del sitio
+## 🎮 Cómo jugar
 
-| Página | Descripción |
-|--------|-------------|
-| **Inicio** | Introducción a la música y habilidades que desarrolla |
-| **Artistas** | Michael Jackson, Freddie Mercury, Adele, Daddy Yankee, Marshmello, Katy Perry, Bad Bunny, Shakira, Beyoncé, Bruno Mars, Ariana Grande, Coldplay |
-| **Géneros** | Pop, Rock, Reggaetón, Electrónica, Jazz, Clásica, Hip-Hop, R&B, Country, Metal, Salsa, Indie |
-| **Instrumentos** | Guitarra, Piano, Batería, Violín, Flauta, Bajo, Saxofón, Trompeta, Arpa, Acordeón, Ukelele, Violonchelo |
+1. **Ingresa tu nombre** en la pantalla de inicio
+2. **Memoriza las cartas** durante 3 segundos (se muestran todas)
+3. **Encuentra todos los pares** de Pokémon
+4. **Menos movimientos y tiempo** = mejor puntuación
+5. **¡Aparece en el leaderboard!** con tu mejor récord
 
-## 🚀 Cómo ver el proyecto online
+## 🎯 Secciones del juego
 
-Puedes ver el proyecto directamente desde GitHub:
-1. Clona este repositorio
-2. Abre `index.html` en tu navegador
+| Sección | Descripción |
+|---------|-------------|
+| **Registro** | Pantalla inicial para ingresar tu nombre |
+| **Vista Previa** | 3 segundos para memorizar la posición de las cartas |
+| **Juego** | Tablero de 12 cartas para encontrar los pares |
+| **Victoria** | Mensaje con tiempo, movimientos y puntuación |
+| **Leaderboard** | Tabla con las mejores puntuaciones guardadas |
 
-```bash
-git clone https://github.com/Paulina-cmd/Musica.git
-cd Musica
-start index.html  # En Windows
-open index.html   # En Mac
+## 🖥️ Tecnologías utilizadas
+
+- **React** - Biblioteca principal para la interfaz
+- **Vite** - Entorno de desarrollo rápido
+- **PokeAPI** - API de Pokémon para las imágenes
+- **CSS3** - Estilos (100% personalizados)
+- **LocalStorage** - Guarda las puntuaciones en tu navegador
+
+## 🧠 Lo que aprendí con este proyecto
+
+- ✅ Uso de **React Hooks** (useState, useEffect)
+- ✅ Creación de **custom hooks** (useTemporizador)
+- ✅ Consumo de **API REST** (PokeAPI)
+- ✅ Manejo de **estado global** con useState
+- ✅ **LocalStorage** para persistencia de datos
+- ✅ **Diseño responsive** con CSS
+- ✅ **Animaciones** y transiciones
+- ✅ **Git y GitHub** para control de versiones
+
